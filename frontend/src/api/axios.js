@@ -1,10 +1,9 @@
 import axios from 'axios';
 
 const instance = axios.create({
-  baseURL: import.meta.env.VITE_API_URL || 'https://finance-tracker-2-wvas.onrender.com/api',
+  baseURL: import.meta.env.VITE_API_URL || 'https://finance-tracker-3-zth6.onrender.com/api',
 });
 
-// Interceptor to add the auth token to every request
 instance.interceptors.request.use(
   (config) => {
     const token = localStorage.getItem('token');
@@ -13,9 +12,7 @@ instance.interceptors.request.use(
     }
     return config;
   },
-  (error) => {
-    return Promise.reject(error);
-  }
+  (error) => Promise.reject(error)
 );
 
 export default instance;
