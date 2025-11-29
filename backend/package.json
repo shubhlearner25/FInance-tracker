@@ -1,11 +1,9 @@
 {
-  "name": "finance-tracker",
+  "name": "finance-tracker-backend",
   "version": "1.0.0",
-  "description": "This is the backend for the Finance Tracker",
-  "license": "ISC",
-  "author": "Archa",
-  "type": "commonjs",
+  "description": "Backend for Finance Tracker App",
   "main": "server.js",
+  "type": "commonjs",
   "scripts": {
     "start": "node server.js",
     "dev": "nodemon server.js",
@@ -34,5 +32,8 @@
     "mongodb-memory-server": "^10.2.1",
     "nodemon": "^3.1.10",
     "supertest": "^7.1.4"
+  },
+  "engines": {
+    "node": "20.x"
   }
 }
