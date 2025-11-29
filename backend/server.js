@@ -57,17 +57,18 @@ app.use('/api/recurring', require('./routes/recurringTransactionRoutes'));
 
 // Static uploads
 app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
-
-app.get('/', (req, res) => {
-  res.send('API is Running');
+app.get("/", (req, res) => {
+  res.send("API is Running");
 });
 
-// ====== SERVER ======
+// No wildcard routes here!! ❌ app.get('*')
+
 const PORT = process.env.PORT || 5000;
 
-const server = app.listen(PORT, () =>
-  console.log(`Server started on port ${PORT}`)
+app.listen(PORT, () =>
+  console.log(`Server running on port ${PORT}`)
 );
+
 
 // ====== KEEP ALIVE CRON JOB (Render) ======
 cron.schedule("*/10 * * * *", async () => {
